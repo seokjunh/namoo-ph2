@@ -1,0 +1,12 @@
+{
+  "LocaleSwitcher": {
+    "locale": "{locale, select, ko {KOR} en {ENG} other {Unknown}}"
+  },
+  "NavBar": {
+    "business": { "title": "비즈니스" },
+    "solution": { "title": "솔루션" },
+    "product": { "title": "제품" },
+    "company": { "title": "회사소개" },
+    "support": { "title": "고객지원" }
+  }
+}
