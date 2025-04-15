@@ -40,7 +40,7 @@ const navMenus: NavMenu[] = [
     title: "support",
     subMenu: [
       { title: "게시판", href: "/support/notice" },
-      { title: "오시는 길", href: "/support/directions" },
+      { title: "오시는 길", href: "/support/location" },
     ],
   },
 ];
@@ -65,7 +65,7 @@ const NavMenu = () => {
             {hoveredIndex === idx && (
               <ul className="absolute left-0 z-10 w-full rounded-xl bg-white py-2 shadow-md">
                 {item.subMenu.map((subItem, subIdx) => (
-                  <li key={subIdx} className="hover:bg-gray-100">
+                  <li key={subIdx} className="hover:text-[#96cb4f]">
                     <Link
                       href={`${subItem.href}`}
                       className="block px-4 py-2 text-base font-semibold"

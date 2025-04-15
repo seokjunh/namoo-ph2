@@ -29,7 +29,7 @@ const NavBar = () => {
 
   return (
     <header className="fixed z-20 w-full">
-      <div className="flex   h-[6.25rem] items-center justify-between bg-[#f4f4f6] opacity-90 lg:px-[5rem]">
+      <div className="flex h-[6.25rem] items-center justify-between opacity-90 lg:px-[5rem]">
         <Logo />
         {isMobileMenuOpen ? (
           <div className="flex items-center">
