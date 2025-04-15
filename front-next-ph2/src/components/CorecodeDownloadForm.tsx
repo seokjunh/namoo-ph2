@@ -39,7 +39,7 @@ const CorecodeDownloadForm = () => {
         {
           method: "POST",
           headers: {
-            "Content-Type": "application/json; charset=utf-8",
+            "Content-Type": "application/json",
           },
           body: JSON.stringify(data),
         },
@@ -52,7 +52,7 @@ const CorecodeDownloadForm = () => {
       alert("이메일 전송 성공");
     } catch (error) {
       console.error("Error creating post:", error);
-      alert("게시물 등록이 실패했습니다.");
+      alert("이메일 전송 실패");
     }
   };
   return (
