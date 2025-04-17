@@ -1,12 +1,14 @@
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+"use client";
+
 import HistoryItem from "./HistoryItem";
+import { useHorizontalScroll } from "@/hooks/useSideScroll";
 
 const History = () => {
+  const scrollRef = useHorizontalScroll();
   return (
-    <ScrollArea className="w-full whitespace-nowrap">
+    <div ref={scrollRef} className="whitespace-nowrap overflow-x-auto">
       <HistoryItem />
-      <ScrollBar orientation="horizontal" />
-    </ScrollArea>
+    </div>
   );
 };
 export default History;
