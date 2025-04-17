@@ -19,7 +19,7 @@ const CompanyHistory = () => {
           </div>
         </div>
       </div>
-      <div className="mb-12 rounded-4xl bg-white lg:mb-24">
+      <div className="rounded-4xl bg-white">
         <div className="mx-auto max-w-md space-y-10 py-7 text-lg sm:py-14 md:max-w-3xl lg:max-w-[90rem]">
           <div className="text-center text-sm font-semibold md:text-base lg:text-lg">
             <div>HISTORY</div>

@@ -1,7 +1,5 @@
 import Image from "next/image";
 
-// 안녕하세요.
-
 const CompanyGreeting = () => {
   return (
     <div className="space-y-10 lg:px-[3rem]">
@@ -20,7 +18,7 @@ const CompanyGreeting = () => {
           </div>
         </div>
       </div>
-      <div className="mb-12 rounded-4xl bg-white lg:mb-24">
+      <div className="rounded-4xl bg-white">
         <div className="mx-auto max-w-sm space-y-6 py-7 text-lg sm:max-w-xl sm:py-14 md:max-w-3xl lg:max-w-5xl">
           <div className="text-md text-center font-semibold">
             <div>GREETING</div>
