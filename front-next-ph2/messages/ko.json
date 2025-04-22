@@ -1,6 +1,6 @@
 {
   "LocaleSwitcher": {
-    "locale": "{locale, select, ko {KOR} en {ENG} other {Unknown}}"
+    "locale": "{locale, select, ko {KR} en {EN} other {Unknown}}"
   },
   "NavBar": {
     "business": { "title": "비즈니스" },

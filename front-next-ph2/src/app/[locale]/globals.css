@@ -3,35 +3,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-body {
-  @apply bg-[#f4f4f6];
-}
-
-.swiper-pagination {
-  position: absolute;
-  width: 25rem;
-  display: flex;
-  justify-content: space-between;
-  text-align: center;
-  background-color: #000;
-  border-radius: 3rem;
-  top: 90% !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  padding: 0 1.563rem;
-}
-
-.custom_bullet {
-  padding: 1rem 0 1rem 0;
-  color: #fff;
-  transition: all 0.3s;
-  cursor: pointer;
-}
-
-.swiper-pagination-custom-bullet-active {
-  color: #96cb4f;
-}
-
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
 
@@ -240,5 +211,18 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@theme {
+  --animate-slide: slide 1s ease-in-out forwards;
+  @keyframes slide {
+    0% {
+      transform: translateX(-100%);
+    }
+    ,
+    100% {
+      transform: translateX(0);
+    }
   }
 }

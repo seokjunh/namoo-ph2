@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const CompanyVision = () => {
   return (
-    <div className="space-y-10 lg:px-[3rem]">
+    <div className="space-y-10 lg:px-[5rem] lg:pb-[6.25rem]">
       <div className="relative h-[10vh] overflow-hidden rounded-4xl md:h-[15vh] lg:h-[25vh]">
         <Image
           src="/image/com_1.png"

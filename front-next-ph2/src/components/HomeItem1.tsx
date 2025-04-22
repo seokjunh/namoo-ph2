@@ -1,5 +1,6 @@
 "use client";
 
+import { easeInOut, motion } from "motion/react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -30,8 +31,8 @@ const HomeItem1 = () => {
   }, []);
 
   return (
-    <div className="lg:h-[calc(100vh-6.25rem)] lg:px-[5rem] lg:pb-[7rem]">
-      <div className="relative h-full w-full aspect-[16/9] overflow-hidden rounded-4xl bg-black">
+    <div className="h-[calc(100vh-6.25rem)] lg:px-[5rem] lg:pb-[6.25rem]">
+      <div className="relative h-full overflow-hidden rounded-4xl bg-black">
         {images.map((img, idx) => (
           <div
             key={idx}

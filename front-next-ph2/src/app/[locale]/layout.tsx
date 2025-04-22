@@ -6,8 +6,6 @@ import { routing } from "@/i18n/routing";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 
-import Header from "@/components/Header";
-
 const pretendard = localFont({
   src: "./font/PretendardVariable.woff2",
   display: "swap",
@@ -40,10 +38,7 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <body className={pretendard.className}>
-        <NextIntlClientProvider>
-          <Header />
-          <div className="pt-[6.25rem]">{children}</div>
-        </NextIntlClientProvider>
+        <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>
     </html>
   );

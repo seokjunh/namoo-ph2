@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 declare global {
@@ -24,38 +25,41 @@ const KakaoMap = () => {
 
       window.kakao.maps.load(() => {
         const container = mapRef.current;
-        const mapOption = {
-          center: new window.kakao.maps.LatLng(37.5167085, 127.0287715), // 지도의 중심좌표
-          level: 3, // 지도의 확대 레벨
-        };
-        const map = new window.kakao.maps.Map(container, mapOption);
+        if (container) {
+          const mapOption = {
+            center: new window.kakao.maps.LatLng(37.5167085, 127.0287715), // 지도의 중심좌표
+            level: 4, // 지도의 확대 레벨
+          };
+          const map = new window.kakao.maps.Map(container, mapOption);
 
-        const markerPosition = new window.kakao.maps.LatLng(
-          37.5167085,
-          127.0287715,
-        );
+          const markerPosition = new window.kakao.maps.LatLng(
+            37.5167085,
+            127.0287715,
+          );
+          const marker = new window.kakao.maps.Marker({
+            position: markerPosition,
+          });
 
-        const marker = new window.kakao.maps.Marker({
-          position: markerPosition,
-        });
+          marker.setMap(map);
 
-        marker.setMap(map);
+          const iwContent =
+            '<div style="padding:5px;">나무아이앤씨<br><a href="https://map.kakao.com/link/map/나무아이앤씨,37.5167085, 127.0287715" style="color:blue" target="_blank">큰지도보기</a> <a href="https://map.kakao.com/link/to/나무아이앤씨,37.5167085, 127.0287715" style="color:blue" target="_blank">길찾기</a></div>';
 
-        const iwContent =
-          '<div style="padding:5px;">나무아이앤씨<br><a href="https://map.kakao.com/link/map/나무아이앤씨,37.5167085, 127.0287715" style="color:blue" target="_blank">큰지도보기</a> <a href="https://map.kakao.com/link/to/나무아이앤씨,37.5167085, 127.0287715" style="color:blue" target="_blank">길찾기</a></div>';
+          const iwPosition = new window.kakao.maps.LatLng(
+            37.5167085,
+            127.0287715,
+          );
 
-        const iwPosition = new window.kakao.maps.LatLng(
-          37.5167085,
-          127.0287715,
-        );
+          const infowindow = new window.kakao.maps.InfoWindow({
+            position: iwPosition,
+            content: iwContent,
+          });
 
-        const infowindow = new window.kakao.maps.InfoWindow({
-          position: iwPosition,
-          content: iwContent,
-        });
-
-        // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
-        infowindow.open(map, marker);
+          // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
+          infowindow.open(map, marker);
+        } else {
+          setScriptLoad(false);
+        }
       });
     };
 
@@ -74,7 +78,13 @@ const KakaoMap = () => {
           className="h-[20rem] sm:h-[25rem] lg:h-[35rem]"
         />
       ) : (
-        <div></div>
+        <Image
+          src={"/image/map.png"}
+          alt="map"
+          width={1151}
+          height={560}
+          className="h-[20rem] sm:h-[25rem] lg:h-[35rem]"
+        />
       )}
     </div>
   );
