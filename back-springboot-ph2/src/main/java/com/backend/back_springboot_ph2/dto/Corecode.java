@@ -10,5 +10,16 @@ public class Corecode {
 
     private String email;
 
+    private String company;
+
+    private String rank;
+
+    private String industry;
+
+    private String detail;
+
+    private boolean agreePrivacy;
+
+    private boolean agreeOver14;
   }
 }

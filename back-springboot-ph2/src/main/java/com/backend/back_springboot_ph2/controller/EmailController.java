@@ -19,7 +19,7 @@ public class EmailController {
 
   @PostMapping("/corecode-inquiry")
   public void sendCorecodeInquiry(@RequestBody InquiryRequest request) {
-    emailService.sendEmail(request.getName(), request.getEmail());
+    emailService.sendEmail(request);
   }
 
 }
