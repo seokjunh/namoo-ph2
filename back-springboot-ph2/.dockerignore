@@ -1,0 +1,34 @@
+# 빌드 결과물
+/build
+/out
+/target
+
+# 의존성 캐시
+.gradle
+.mvn
+**/node_modules
+
+# 환경 파일
+.env
+*.env
+
+# OS/IDE 관련
+*.iml
+*.class
+*.log
+.DS_Store
+.idea/
+.vscode/
+
+# Git 관련
+.git
+.gitignore
+
+# 테스트 리포트
+/test-results
+/test-output
+/reports
+
+# Docker 자체
+Dockerfile
+.dockerignore
