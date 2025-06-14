@@ -1,0 +1,12 @@
+services:
+  frontend:
+    build: ./front-next-ph2
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+  backend:
+    build: ./back-springboot-ph2
+    ports:
+      - "8080:8080"
