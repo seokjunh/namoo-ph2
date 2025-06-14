@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm, useWatch } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { z } from "zod";
 import {
   Form,
@@ -71,16 +71,13 @@ const CorecodeInquiry = () => {
   const onSubmit = async (data: z.infer<typeof FormSchema>) => {
     console.log(JSON.stringify({ ...data }));
     try {
-      const response = await fetch(
-        "http://localhost:8080/api/corecode-inquiry",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
+      const response = await fetch("http://backend:8080/api/corecode-inquiry", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-      );
+        body: JSON.stringify(data),
+      });
 
       if (!response.ok) {
         const errorData = await response.json();
