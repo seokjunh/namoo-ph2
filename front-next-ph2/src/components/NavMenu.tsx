@@ -18,22 +18,11 @@ const navMenus: NavMenu[] = [
   {
     title: "solution",
     subMenu: [
+      { title: "CoreCode", href: "/product/corecode" },
       { title: "P2E", href: "/support/directions" },
       { title: "Q2E", href: "/support/directions" },
       { title: "S2E", href: "/support/directions" },
       { title: "E2E", href: "/support/directions" },
-    ],
-  },
-  {
-    title: "product",
-    subMenu: [{ title: "CoreCode", href: "/product/corecode" }],
-  },
-  {
-    title: "company",
-    subMenu: [
-      { title: "나무아이앤씨", href: "/company/greeting" },
-      { title: "연혁", href: "/company/history" },
-      { title: "비전", href: "/company/vision" },
     ],
   },
   {
@@ -43,27 +32,35 @@ const navMenus: NavMenu[] = [
       { title: "오시는 길", href: "/support/location" },
     ],
   },
+  {
+    title: "company",
+    subMenu: [
+      { title: "나무아이앤씨", href: "/company/greeting" },
+      { title: "연혁", href: "/company/history" },
+      { title: "비전", href: "/company/vision" },
+    ],
+  },
 ];
 
 const NavMenu = () => {
   const t = useTranslations("NavBar");
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [hovered, setHovered] = useState(false);
 
   return (
-    <nav className="hidden sm:block" role="navigation" aria-label="메인 메뉴">
+    <nav className="hidden sm:block" aria-label="메인 메뉴">
       <ul className="flex items-center justify-center font-bold lg:text-lg">
         {navMenus.map((item, idx) => (
           <li
             key={idx}
             className="relative text-center"
-            onMouseEnter={() => setHoveredIndex(idx)}
-            onMouseLeave={() => setHoveredIndex(null)}
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
           >
             <button className="px-[1rem] py-4 lg:px-[2.5rem]">
               {t(`${item.title}.title`)}
             </button>
-            {hoveredIndex === idx && (
-              <ul className="absolute left-0 z-10 w-full rounded-xl bg-white py-2 shadow-md">
+            {hovered && (
+              <ul className="absolute left-0 z-10 w-full py-2">
                 {item.subMenu.map((subItem, subIdx) => (
                   <li key={subIdx} className="hover:text-[#96cb4f]">
                     <Link

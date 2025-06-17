@@ -20,11 +20,11 @@ const LocaleSwicher = () => {
           <button
             value={cur}
             onClick={onSelectChange}
-            className={`${locale === cur ? "font-bold text-black" : "text-gray-500"} cursor-pointer`}
+            className={`${locale === cur ? "font-bold underline underline-offset-4" : "text-white"} cursor-pointer`}
           >
             {t("locale", { locale: cur })}
           </button>
-          {idx + 1 !== routing.locales.length && <div className="px-2">|</div>}
+          {idx + 1 !== routing.locales.length && <div className="px-2 text-white">|</div>}
         </div>
       ))}
     </div>

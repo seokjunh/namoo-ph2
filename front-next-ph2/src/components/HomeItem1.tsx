@@ -1,6 +1,5 @@
 "use client";
 
-import { easeInOut, motion } from "motion/react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -31,8 +30,8 @@ const HomeItem1 = () => {
   }, []);
 
   return (
-    <div className="h-[calc(100vh-6.25rem)] lg:px-[5rem] lg:pb-[6.25rem]">
-      <div className="relative h-full overflow-hidden rounded-4xl bg-black">
+    <div className="h-screen">
+      <div className="relative h-full overflow-hidden bg-black">
         {images.map((img, idx) => (
           <div
             key={idx}
@@ -46,7 +45,7 @@ const HomeItem1 = () => {
               priority={idx === 0}
               className="h-full w-full object-cover brightness-50"
             />
-            <div className="absolute top-[30%] left-[5%] max-w-[90%] space-y-4 text-white lg:top-[40%] lg:left-[10%] lg:max-w-[80%]">
+            <div className="absolute top-[30%] left-[5%] max-w-[90%] space-y-4 lg:top-[40%] lg:left-[10%] lg:max-w-[80%]">
               <div>
                 <p className="text-lg font-bold sm:text-xl md:text-5xl">
                   Innovate

@@ -5,7 +5,7 @@ const HomeItem4 = () => {
     <div className="lg:px-[5rem] lg:py-[6.25rem]">
       <div className="mx-auto max-w-[80rem]">
         <div className="space-y-12">
-          <div className="text-center text-2xl font-extrabold text-[#303030] lg:text-4xl">
+          <div className="text-center text-2xl font-extrabold lg:text-4xl">
             SERVICE
           </div>
           <div className="space-y-4">
@@ -13,7 +13,7 @@ const HomeItem4 = () => {
               <div>산업용 데이터 연계 및 통합</div>
               <div>공장 자동화 디지털 전환</div>
             </div>
-            <div className="text-gray-500 md:text-lg">
+            <div className="md:text-lg">
               <div>
                 나무아이앤씨는 공장 자동화 시스템 전반의 데이터를 연계하고
               </div>

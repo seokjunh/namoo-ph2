@@ -7,9 +7,9 @@ export default async function Layout({
   children: React.ReactNode;
 }>) {
   return (
-    <div>
+    <div className="bg-[#1C1C1C] text-white">
       <Header />
-      <div className="bg-[#f4f4f6] pt-[6.25rem]">{children}</div>
+      <div>{children}</div>
       <Footer />
     </div>
   );

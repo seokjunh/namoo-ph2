@@ -10,7 +10,7 @@ const HomeItem2 = () => {
     <div className="lg:px-[5rem] lg:py-[6.25rem]">
       <div ref={ref} className="flex items-center justify-around">
         <div className="space-y-8">
-          <div className="text-2xl font-extrabold text-[#303030]">
+          <div className="text-2xl font-extrabold">
             <div>About Us</div>
           </div>
           <div>
@@ -36,7 +36,7 @@ const HomeItem2 = () => {
               initial={{ opacity: 0, x: -100 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 2 }}
-              className="space-y-4 text-gray-700 sm:text-lg md:text-2xl"
+              className="space-y-4 sm:text-lg md:text-2xl"
             >
               <div>
                 나무아이앤씨는 고객의 가치를 연결하여 더욱 큰 가치를 창출하는
@@ -69,7 +69,7 @@ const HomeItem2 = () => {
           transition={{ duration: 2 }}
         >
           <div className="flex items-center justify-center">
-            <div className="relative z-10 h-[10rem] w-[10rem] rounded-[50%] bg-white opacity-95 shadow-md md:h-[20rem] md:w-[20rem]">
+            <div className="relative z-10 h-[10rem] w-[10rem] rounded-[50%] bg-white text-black opacity-95 shadow-md md:h-[20rem] md:w-[20rem]">
               <div className="absolute inset-0 flex items-center justify-center text-2xl md:text-5xl">
                 고객
               </div>

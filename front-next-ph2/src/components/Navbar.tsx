@@ -8,6 +8,23 @@ import NavMenu from "./NavMenu";
 
 const NavBar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const scrollHandler = () => {
+      const scrollY = window.scrollY || document.documentElement.scrollTop;
+      setIsOpen(scrollY > 50);
+    };
+
+    window.addEventListener("scroll", scrollHandler);
+
+    // 초기 실행 (처음부터 50 이상일 수도 있으니)
+    scrollHandler();
+
+    return () => {
+      window.removeEventListener("scroll", scrollHandler);
+    };
+  }, []);
 
   useEffect(() => {
     const resizeHandler = () => {
@@ -29,16 +46,20 @@ const NavBar = () => {
 
   return (
     <header className="fixed z-20 w-full">
-      <div className="flex h-[6.25rem] items-center justify-between bg-[#f4f4f6] opacity-90 lg:px-[5rem]">
-        <Logo />
-        {isMobileMenuOpen ? (
-          <div className="flex items-center">
-            <MobileMenu />
-            <LocaleSwicher />
-          </div>
-        ) : (
-          <NavMenu />
-        )}
+      <div
+        className={`flex h-[6.25rem] items-center justify-between lg:px-[5rem] ${isOpen ? "bg-[#1C1C1C] opacity-90" : ""}`}
+      >
+        <div className="flex">
+          <Logo />
+          {isMobileMenuOpen ? (
+            <div className="flex items-center">
+              <MobileMenu />
+              <LocaleSwicher />
+            </div>
+          ) : (
+            <NavMenu />
+          )}
+        </div>
         {!isMobileMenuOpen && <LocaleSwicher />}
       </div>
     </header>

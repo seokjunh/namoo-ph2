@@ -6,7 +6,7 @@ const HomeItem3 = () => {
     <div className="lg:px-[5rem] lg:py-[6.25rem]">
       <div className="mx-auto max-w-[80rem]">
         <div className="space-y-12 text-center">
-          <div className="text-2xl font-extrabold text-[#303030] lg:text-4xl">
+          <div className="text-2xl font-extrabold lg:text-4xl">
             BUSINESS
           </div>
           <div className="space-y-12">
