@@ -71,7 +71,7 @@ const CorecodeInquiry = () => {
   const onSubmit = async (data: z.infer<typeof FormSchema>) => {
     console.log(JSON.stringify({ ...data }));
     try {
-      const response = await fetch("http://backend:8080/api/corecode-inquiry", {
+      const response = await fetch("http://localhost:8080/api/corecode-inquiry", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
