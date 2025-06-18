@@ -6,9 +6,10 @@ import Logo from "./Logo";
 import MobileMenu from "./MobileMenu";
 import NavMenu from "./NavMenu";
 
-const NavBar = () => {
+const NavBar = ({ bgColor }: { bgColor: string }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [image, setImage] = useState("/ci.png");
 
   useEffect(() => {
     const scrollHandler = () => {
@@ -28,7 +29,7 @@ const NavBar = () => {
 
   useEffect(() => {
     const resizeHandler = () => {
-      if (window.innerWidth < 850) {
+      if (window.innerWidth < 768) {
         setIsMobileMenuOpen(true);
       } else {
         setIsMobileMenuOpen(false);
@@ -44,23 +45,20 @@ const NavBar = () => {
     };
   }, []);
 
+  useEffect(() => {
+    bgColor === "bg-[#1C1C1C]" ? setImage("ci_white.png") : setImage("ci.png");
+  });
+
   return (
     <header className="fixed z-20 w-full">
       <div
-        className={`flex h-[6.25rem] items-center justify-between lg:px-[5rem] ${isOpen ? "bg-[#1C1C1C] opacity-90" : ""}`}
+        className={`flex h-[6.25rem] items-center justify-between lg:px-[5rem] px-[2rem] ${isOpen ? `${bgColor} opacity-90` : ""}`}
       >
-        <div className="flex">
-          <Logo />
-          {isMobileMenuOpen ? (
-            <div className="flex items-center">
-              <MobileMenu />
-              <LocaleSwicher />
-            </div>
-          ) : (
-            <NavMenu />
-          )}
+        <div className="flex items-center">
+          <Logo image={image} />
+          <NavMenu />
         </div>
-        {!isMobileMenuOpen && <LocaleSwicher />}
+        {isMobileMenuOpen ? <MobileMenu /> : <LocaleSwicher />}
       </div>
     </header>
   );

@@ -1,6 +1,6 @@
 import { Link } from "@/i18n/navigation";
+import { useHoverStore } from "@/store/useNavhoverStore";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
 
 interface NavMenu {
   title: string;
@@ -44,25 +44,26 @@ const navMenus: NavMenu[] = [
 
 const NavMenu = () => {
   const t = useTranslations("NavBar");
-  const [hovered, setHovered] = useState(false);
+  const hovered = useHoverStore((state) => state.hovered);
+  const setHovered = useHoverStore((state) => state.setHovered);
 
   return (
     <nav className="hidden sm:block" aria-label="메인 메뉴">
       <ul className="flex items-center justify-center font-bold lg:text-lg">
-        {navMenus.map((item, idx) => (
+        {navMenus.map((item) => (
           <li
-            key={idx}
+            key={item.title}
             className="relative text-center"
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
           >
-            <button className="px-[1rem] py-4 lg:px-[2.5rem]">
+            <div className="px-[1rem] py-4 lg:px-[2.5rem] ">
               {t(`${item.title}.title`)}
-            </button>
+            </div>
             {hovered && (
-              <ul className="absolute left-0 z-10 w-full py-2">
-                {item.subMenu.map((subItem, subIdx) => (
-                  <li key={subIdx} className="hover:text-[#96cb4f]">
+              <ul className="absolute z-20 w-full py-2">
+                {item.subMenu.map((subItem) => (
+                  <li key={subItem.title} className="hover:text-[#96cb4f]">
                     <Link
                       href={`${subItem.href}`}
                       className="block px-4 py-2 text-base font-semibold"

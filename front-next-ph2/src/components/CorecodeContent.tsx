@@ -6,6 +6,7 @@ import CorecodeOverview from "./CorecodeOverview";
 import CorecodeStack from "./CorecodeStack";
 import CorecodeComposition from "./CorecodeComposition";
 import CorecodeFeature from "./CorecodeFeature";
+import { Button } from "./ui/button";
 
 const CorecodeContent = () => {
   const openInquiryPopup = () => {
@@ -17,7 +18,7 @@ const CorecodeContent = () => {
   };
 
   return (
-    <div className="space-y-10 lg:px-[5rem] lg:pb-[6.25rem]">
+    <div className="space-y-10 pt-[6.25rem] text-black lg:px-[5rem] lg:pb-[6.25rem]">
       <div className="relative h-[10vh] overflow-hidden rounded-4xl md:h-[15vh] lg:h-[25vh]">
         <Image
           src="/image/com_1.png"
@@ -50,12 +51,13 @@ const CorecodeContent = () => {
                 드리겠습니다.
               </div>
             </div>
-            <button
+            <Button
+              type="button"
               onClick={openInquiryPopup}
               className="cursor-pointer rounded-none bg-[#96cb4f] px-[17rem] py-[2rem] text-2xl font-semibold text-white hover:bg-[#96cb4f]/90"
             >
               문의하기
-            </button>
+            </Button>
           </div>
         </div>
       </div>

@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className="flex flex-col items-center justify-center space-y-6 px-5 py-24">
+    <div className="flex flex-col items-center justify-center space-y-6 bg-black px-5 py-24 text-white">
       <div className="text-xl">(주)나무아이앤씨</div>
       <div className="flex space-x-4">
         <Link href={"/"}>Business</Link>

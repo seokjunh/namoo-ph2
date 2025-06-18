@@ -30,11 +30,11 @@ const HomeItem1 = () => {
   }, []);
 
   return (
-    <div className="h-screen">
+    <div className="lg:h-screen h-[50vh]">
       <div className="relative h-full overflow-hidden bg-black">
-        {images.map((img, idx) => (
+        {images.map((img,idx) => (
           <div
-            key={idx}
+            key={img.name}
             className={`absolute inset-0 transition-opacity duration-[2s] ease-in-out ${currentIdx === idx ? "opacity-100" : "opacity-0"}`}
           >
             <Image
