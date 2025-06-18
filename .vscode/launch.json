@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "BackSpringbootPh2Application",
+            "request": "launch",
+            "mainClass": "com.backend.back_springboot_ph2.BackSpringbootPh2Application",
+            "projectName": "back-springboot-ph2"
+        },
+        {
+            "name": "Containers: Node.js Launch",
+            "type": "docker",
+            "request": "launch",
+            "preLaunchTask": "docker-run: debug",
+            "platform": "node",
+            "node": {
+                "package": "${workspaceFolder}/front-next-ph2/package.json",
+                "localRoot": "${workspaceFolder}/front-next-ph2"
+            }
+        }
+    ]
+}

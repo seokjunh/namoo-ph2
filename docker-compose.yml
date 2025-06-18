@@ -1,0 +1,42 @@
+version: "3.9"
+
+services:
+  # ────────────────────────────────────────────────
+  # Backend (Spring Boot)
+  # ────────────────────────────────────────────────
+  backend:
+    build: ./back-springboot-ph2            # 기존 Dockerfile 경로
+    container_name: dev-backend             # 구분하기 쉬운 이름
+    restart: unless-stopped
+    networks:
+      - nginx-net
+    expose:                                  # 프록시가 내부 8080 포트로 접근
+      - "8080"
+
+  # ────────────────────────────────────────────────
+  # Frontend (Next.js) → developer.namooinc.com
+  # ────────────────────────────────────────────────
+  frontend:
+    build: ./front-next-ph2                 # 기존 Dockerfile 경로
+    container_name: dev-frontend
+    restart: unless-stopped
+    networks:
+      - nginx-net
+    environment:
+      - VIRTUAL_HOST=developer.namooinc.com
+      - LETSENCRYPT_HOST=developer.namooinc.com
+      - LETSENCRYPT_EMAIL=support@namooinc.com   # 실제 운영 메일로 교체
+      - VIRTUAL_PORT=3000                  # Next.js 컨테이너 내부 포트
+    depends_on:
+      - backend
+    # 필요 시 로컬 직접 접근용 포트 매핑(선택) → 주석 해제
+    # ports:
+    #   - "3100:3000"
+
+# ────────────────────────────────────────────────
+# 외부 네트워크: nginx-proxy 와 letsencrypt 컨테이너가 이미 사용 중
+# ────────────────────────────────────────────────
+networks:
+  nginx-net:
+    external: true
+
