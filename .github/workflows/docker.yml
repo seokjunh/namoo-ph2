@@ -51,6 +51,10 @@ jobs:
 
              cd /home/homepage/namoo-ph2-old/front-next-ph2
              cp .env.example .env.dev
+
+             sudo nano .env.dev
+
+             cc0db3300b2ed0a91cdb8590e5854ade
               
              docker compose down
              docker compose build --no-cache
