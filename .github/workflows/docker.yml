@@ -49,6 +49,9 @@ jobs:
              git remote origin develop
              git checkout -b develop origin/develop
 
+             cd /home/homepage/namoo-ph2-old/front-next-ph2
+             cp .env.example .env.dev
+              
              docker compose down
              docker compose build --no-cache
              docker compose up -d
