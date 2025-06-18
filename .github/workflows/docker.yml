@@ -1,8 +1,6 @@
 name: Build and Push to Docker Hub
 
 on:
-  push:
-    branches: [main]
   pull_request:
     branches: [main]
 
@@ -36,3 +34,20 @@ jobs:
           context: ./back-springboot-ph2
           push: true
           tags: ${{ secrets.DOCKERHUB_TOKEN }}/backend:latest
+
+      - name: Connect homepage server and Execute Application
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.HOST }}
+          username:  ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: |
+             git clone https://github.com/seokjunh/namoo-ph2.git
+             git remote origin develop
+             git checkout -b develop origin/develop
+
+             docker compose down
+             docker compose build --no-cache
+             docker compose up -d
+             
