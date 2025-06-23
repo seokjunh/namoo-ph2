@@ -51,8 +51,8 @@ const BusinessCarousel = () => {
         className="mx-auto max-w-[15rem] md:max-w-[35rem] lg:max-w-[80rem]"
       >
         <CarouselContent>
-          {contents.map((item) => (
-            <CarouselItem key={item.title} className="md:basis-1/2 lg:basis-1/3">
+          {contents.map((item,idx) => (
+            <CarouselItem key={item.title+idx} className="md:basis-1/2 lg:basis-1/3">
               <Link href={"/"} className="">
                 <div className="h-[10rem] w-[15rem] rounded-3xl border border-transparent bg-white p-4 transition-colors duration-200 hover:border-[#96cb4f] lg:h-[18rem] lg:w-[25rem] lg:p-6">
                   <div className="flex h-full flex-col text-left">

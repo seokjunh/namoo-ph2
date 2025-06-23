@@ -5,9 +5,10 @@ const CompanyGreeting = () => {
     <div className="space-y-10 lg:px-[5rem] lg:pb-[6.25rem]">
       <div className="relative h-[10vh] overflow-hidden rounded-4xl md:h-[15vh] lg:h-[25vh]">
         <Image
-          src="/image/com_1.png"
+          src="/image/com1.png"
           alt="greeting"
           fill
+          priority
           className="object-cover object-bottom brightness-75"
         />
         <div className="absolute inset-0 flex items-center justify-center text-center text-white">

@@ -57,7 +57,7 @@ const NavMenu = () => {
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
           >
-            <div className="px-[1rem] py-4 lg:px-[2.5rem] ">
+            <div className="px-[1rem] py-4 lg:px-[2.5rem]">
               {t(`${item.title}.title`)}
             </div>
             {hovered && (

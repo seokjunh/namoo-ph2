@@ -9,7 +9,7 @@ import NavMenu from "./NavMenu";
 const NavBar = ({ bgColor }: { bgColor: string }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [image, setImage] = useState("/ci.png");
+  const [image, setImage] = useState("");
 
   useEffect(() => {
     const scrollHandler = () => {
@@ -46,19 +46,30 @@ const NavBar = ({ bgColor }: { bgColor: string }) => {
   }, []);
 
   useEffect(() => {
-    bgColor === "bg-[#1C1C1C]" ? setImage("ci_white.png") : setImage("ci.png");
+    bgColor === "bg-[#1C1C1C]"
+      ? setImage("ci_white.png")
+      : setImage("ci_green.png");
   });
 
   return (
     <header className="fixed z-20 w-full">
       <div
-        className={`flex h-[6.25rem] items-center justify-between lg:px-[5rem] px-[2rem] ${isOpen ? `${bgColor} opacity-90` : ""}`}
+        className={`flex h-[6.25rem] items-center justify-between px-[2rem] lg:px-[5rem] ${isOpen ? `${bgColor} opacity-90` : ""}`}
       >
         <div className="flex items-center">
           <Logo image={image} />
           <NavMenu />
         </div>
-        {isMobileMenuOpen ? <MobileMenu /> : <LocaleSwicher />}
+        {isMobileMenuOpen ? (
+          <MobileMenu />
+        ) : (
+          <div className="flex">
+            <button className="cursor-pointer px-[1rem] py-4 underline-offset-4 hover:underline lg:px-[2.5rem]">
+              문의하기
+            </button>
+            <LocaleSwicher />
+          </div>
+        )}
       </div>
     </header>
   );
