@@ -30,10 +30,10 @@ const ServiceCard = () => {
       animate={inView && { opacity: 1, y: 0 }}
       transition={{ duration: 1 }}
     >
-      <div className="flex flex-col items-center justify-center md:flex-row gap-2 sm:gap-4 lg:gap-8">
-        {images.map((data) => (
+      <div className="flex flex-col items-center justify-center gap-2 sm:gap-4 md:flex-row lg:gap-8">
+        {images.map((data, idx) => (
           <div
-            key={data.title}
+            key={data.title + idx}
             className="w-full overflow-hidden rounded-3xl bg-white shadow-sm"
           >
             <div className="h-[10rem] sm:h-[15rem]">

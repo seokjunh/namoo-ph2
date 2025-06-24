@@ -5,9 +5,9 @@ import HomeItem4 from "./HomeItem4";
 
 const HomeContent = () => {
   return (
-    <div className="">
+    <div>
       <HomeItem1 />
-      <div className="space-y-16 max-w-[120rem] mx-auto py-[6.25rem]">
+      <div className="mx-auto max-w-[120rem] space-y-16 py-[6.25rem]">
         <HomeItem2 />
         <HomeItem3 />
         <HomeItem4 />

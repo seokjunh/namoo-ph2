@@ -27,14 +27,14 @@ const KakaoMap = () => {
         const container = mapRef.current;
         if (container) {
           const mapOption = {
-            center: new window.kakao.maps.LatLng(37.5167085, 127.0287715), // 지도의 중심좌표
+            center: new window.kakao.maps.LatLng(37.4773918, 127.0377454), // 지도의 중심좌표
             level: 4, // 지도의 확대 레벨
           };
           const map = new window.kakao.maps.Map(container, mapOption);
 
           const markerPosition = new window.kakao.maps.LatLng(
-            37.5167085,
-            127.0287715,
+            37.4773918,
+            127.0377454,
           );
           const marker = new window.kakao.maps.Marker({
             position: markerPosition,
@@ -43,11 +43,11 @@ const KakaoMap = () => {
           marker.setMap(map);
 
           const iwContent =
-            '<div style="padding:5px;">나무아이앤씨<br><a href="https://map.kakao.com/link/map/나무아이앤씨,37.5167085, 127.0287715" style="color:blue" target="_blank">큰지도보기</a> <a href="https://map.kakao.com/link/to/나무아이앤씨,37.5167085, 127.0287715" style="color:blue" target="_blank">길찾기</a></div>';
+            '<div style="padding:5px;">나무아이앤씨<br><a href="https://map.kakao.com/link/map/나무아이앤씨,37.4773918, 127.0377454" style="color:blue" target="_blank">큰지도보기</a> <a href="https://map.kakao.com/link/to/나무아이앤씨,37.5167085, 127.0287715" style="color:blue" target="_blank">길찾기</a></div>';
 
           const iwPosition = new window.kakao.maps.LatLng(
-            37.5167085,
-            127.0287715,
+            37.4773918,
+            127.0377454,
           );
 
           const infowindow = new window.kakao.maps.InfoWindow({
