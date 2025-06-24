@@ -11,7 +11,6 @@ const NavBar = ({ bgColor }: { bgColor: string }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [image, setImage] = useState("");
-  const [image, setImage] = useState("");
 
   useEffect(() => {
     const scrollHandler = () => {
@@ -56,7 +55,6 @@ const NavBar = ({ bgColor }: { bgColor: string }) => {
   return (
     <header className="fixed z-20 w-full">
       <div
-        className={`flex h-[6.25rem] items-center justify-between px-[2rem] lg:px-[5rem] ${isOpen ? `${bgColor} opacity-90` : ""}`}
         className={`flex h-[6.25rem] items-center justify-between px-[2rem] lg:px-[5rem] ${isOpen ? `${bgColor} opacity-90` : ""}`}
       >
         <div className="flex items-center">
