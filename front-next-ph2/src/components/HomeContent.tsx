@@ -12,7 +12,6 @@ const HomeContent = () => {
         <HomeItem3 />
         <HomeItem4 />
       </div>
-      <div className="fixed top-[70rem] right-0">문의하기 버튼</div>
     </div>
   );
 };

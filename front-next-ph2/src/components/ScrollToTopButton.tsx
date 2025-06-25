@@ -5,7 +5,10 @@ import ArrowUp from "../../public/svg/ArrowUp";
 const ScrollToTopButton = ({
   bgColor,
   textColor,
-}: { bgColor: string; textColor: string }) => {
+}: {
+  bgColor: string;
+  textColor: string;
+}) => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -16,7 +19,7 @@ const ScrollToTopButton = ({
   return (
     <button
       type="button"
-      className="fixed top-[90vh] right-[2rem] lg:right-[5rem] cursor-pointer"
+      className="fixed top-[90vh] right-[2rem] z-10 cursor-pointer lg:right-[5rem]"
       onClick={scrollToTop}
     >
       <div
