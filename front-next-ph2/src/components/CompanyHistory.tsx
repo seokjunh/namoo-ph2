@@ -6,7 +6,7 @@ const CompanyHistory = () => {
     <div className="space-y-10 lg:px-[5rem] lg:pb-[6.25rem]">
       <div className="relative h-[10vh] overflow-hidden rounded-4xl md:h-[15vh] lg:h-[25vh]">
         <Image
-          src="/image/com_1.png"
+          src="/image/banner.png"
           alt="history"
           fill
           className="object-cover object-bottom brightness-75"
