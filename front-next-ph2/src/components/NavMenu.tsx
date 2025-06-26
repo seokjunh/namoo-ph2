@@ -4,40 +4,43 @@ import { useTranslations } from "next-intl";
 
 interface NavMenu {
   title: string;
-  subMenu: { title: string; href: string }[];
+  subMenu: { title: string; subTitle?: string; href: string }[];
 }
 
 const navMenus: NavMenu[] = [
   {
     title: "business",
     subMenu: [
-      { title: "Smart Factory", href: "/support/notice" },
-      { title: "Data Interface", href: "/support/directions" },
+      { title: "CoreCode", href: "/" },
+      { title: "LMP", href: "/" },
+      { title: "MES", href: "/" },
     ],
   },
   {
     title: "solution",
     subMenu: [
-      { title: "CoreCode", href: "/product/corecode" },
-      { title: "P2E", href: "/support/directions" },
-      { title: "Q2E", href: "/support/directions" },
-      { title: "S2E", href: "/support/directions" },
-      { title: "E2E", href: "/support/directions" },
+      { title: "CoreCode", subTitle: "플랫폼 기반 통합생산관리", href: "/" },
+      { title: "LMP", subTitle: "플랫폼 기반 통합생산관리", href: "/" },
+      { title: "MES", subTitle: "플랫폼 기반 통합생산관리", href: "/" },
     ],
   },
   {
     title: "support",
     subMenu: [
-      { title: "게시판", href: "/support/notice" },
-      { title: "오시는 길", href: "/support/location" },
+      { title: "라이브러리", href: "/" },
+      { title: "언론보도", href: "/" },
+      { title: "공지사항", href: "/" },
     ],
   },
   {
     title: "company",
     subMenu: [
-      { title: "나무아이앤씨", href: "/company/greeting" },
-      { title: "연혁", href: "/company/history" },
-      { title: "비전", href: "/company/vision" },
+      { title: "CEO", href: "/" },
+      { title: "연혁", href: "/" },
+      { title: "운리경영", href: "/" },
+      { title: "채용", href: "/" },
+      { title: "복리후생", href: "/" },
+      { title: "찾아오시는 길길", href: "/" },
     ],
   },
 ];
@@ -53,22 +56,28 @@ const NavMenu = () => {
         {navMenus.map((item) => (
           <li
             key={item.title}
-            className="relative text-center"
+            className="relative"
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
           >
-            <div className="px-[1rem] py-4 lg:px-[2.5rem] ">
+            <button type="button" className="px-[1rem] py-4 lg:px-[2.5rem]">
               {t(`${item.title}.title`)}
-            </div>
+            </button>
             {hovered && (
-              <ul className="absolute z-20 w-full py-2">
+              <ul className="absolute z-20 mx-[1rem] w-full lg:mx-[2.5rem]">
                 {item.subMenu.map((subItem) => (
-                  <li key={subItem.title} className="hover:text-[#96cb4f]">
+                  <li key={subItem.title} className="hover:text-[#96cb4f] py-2">
                     <Link
                       href={`${subItem.href}`}
-                      className="block px-4 py-2 text-base font-semibold"
+                      className="text-base font-semibold "
                     >
                       {subItem.title}
+                      <br />
+                      {subItem.subTitle && (
+                        <span className="text-sm text-gray-500">
+                          {subItem.subTitle}
+                        </span>
+                      )}
                     </Link>
                   </li>
                 ))}

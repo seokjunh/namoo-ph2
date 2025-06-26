@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
 
+import Footer from "@/components/Footer";
 import { routing } from "@/i18n/routing";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
@@ -38,7 +39,10 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <body className={pretendard.className}>
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider>
+          {children}
+          <Footer />
+        </NextIntlClientProvider>
       </body>
     </html>
   );

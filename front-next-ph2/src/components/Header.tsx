@@ -9,7 +9,7 @@ const Header = ({ bgColor }: { bgColor: string }) => {
     <>
       <NavBar bgColor={bgColor} />
       {hovered && (
-        <div className={`${bgColor} fixed z-10 h-[20rem] w-full opacity-90`} />
+        <div className={`${bgColor} fixed z-10 h-[25rem] w-full opacity-80`} />
       )}
     </>
   );

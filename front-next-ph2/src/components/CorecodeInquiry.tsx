@@ -1,9 +1,5 @@
 "use client";
 
-import Image from "next/image";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
 import {
   Form,
   FormControl,
@@ -12,7 +8,11 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "./ui/textarea";
+import { zodResolver } from "@hookform/resolvers/zod";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
 import { Checkbox } from "./ui/checkbox";
 import {
   Select,
@@ -21,7 +21,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./ui/select";
-import { useEffect, useState } from "react";
+import { Textarea } from "./ui/textarea";
 
 const FormSchema = z.object({
   name: z.string().trim().min(1, {

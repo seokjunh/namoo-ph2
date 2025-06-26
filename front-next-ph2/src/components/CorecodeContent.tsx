@@ -1,11 +1,11 @@
 "use client";
 
 import Image from "next/image";
+import CorecodeComposition from "./CorecodeComposition";
 import CorecodeConcept from "./CorecodeConcept";
+import CorecodeFeature from "./CorecodeFeature";
 import CorecodeOverview from "./CorecodeOverview";
 import CorecodeStack from "./CorecodeStack";
-import CorecodeComposition from "./CorecodeComposition";
-import CorecodeFeature from "./CorecodeFeature";
 import { Button } from "./ui/button";
 
 const CorecodeContent = () => {

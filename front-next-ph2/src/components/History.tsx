@@ -1,7 +1,7 @@
 "use client";
 
-import HistoryItem from "./HistoryItem";
 import { useHorizontalScroll } from "@/hooks/useSideScroll";
+import HistoryItem from "./HistoryItem";
 
 const History = () => {
   const scrollRef = useHorizontalScroll();

@@ -215,14 +215,14 @@
 }
 
 @theme {
-  --animate-slide: slide 1s ease-in-out forwards;
-  @keyframes slide {
+  --animate-scroll: img-to-left 15s linear infinite;
+
+  @keyframes img-to-left {
     0% {
-      transform: translateX(-100%);
+      transform: translateX(0%);
     }
-    ,
     100% {
-      transform: translateX(0);
+      transform: translateX(-150%);
     }
   }
 }

@@ -15,10 +15,10 @@ const LocaleSwicher = () => {
 
   return (
     <div className="flex items-center lg:text-lg">
-      {routing.locales.map((cur,idx) => (
+      {routing.locales.map((cur, idx) => (
         <div key={cur} className="flex">
           <button
-          type="button"
+            type="button"
             value={cur}
             onClick={onSelectChange}
             className={`${locale === cur ? "font-bold underline underline-offset-4" : ""} cursor-pointer`}
